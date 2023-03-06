@@ -1,0 +1,2 @@
+INSERT INTO tccmatch_user (email, full_name, password, role, username) values ('admin@gmail.com', 'admin', '$2a$10$MddVba/60EZr1LU/Dg6z9OtmzWYFYG/8aixXOLi73yy1Zc7Thg2Dy', 1, 'admin');
+INSERT INTO admin (id) values (1);
