@@ -24,11 +24,11 @@ public class UserApiController {
     @Autowired
     private AuthService authService;
 
-    @GetMapping("/inbox")
-    @ApiOperation(value = "Listagem da caixa de entrada do usuário logado")
-    public ResponseEntity<Collection<String>> getEmailsList() {
-        return new ResponseEntity<>(authService.getLoggedUser().getEmails(), HttpStatus.OK);
-    }
+    // @GetMapping("/inbox")
+    // @ApiOperation(value = "Listagem da caixa de entrada do usuário logado")
+    // public ResponseEntity<Collection<String>> getEmailsList() {
+    //     return new ResponseEntity<>(authService.getLoggedUser().getEmails(), HttpStatus.OK);
+    // }
 
     @GetMapping("/me")
     @ApiOperation(value = "Informações sobre o usuário logado")
