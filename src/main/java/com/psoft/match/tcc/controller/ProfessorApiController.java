@@ -30,12 +30,12 @@ public class ProfessorApiController {
     @Autowired
     private ProfessorService professorService;
 
-    @ApiOperation("Registra interesse em uma proposta de TCC")
-    @PutMapping("/tcc/{tccId}/interest")
-    public ResponseEntity<Void> declareOrientationInterest(@PathVariable Long tccId) {
-        professorService.declareOrientationInterest(tccId);
-        return new ResponseEntity<>(HttpStatus.CREATED);
-    }
+    // @ApiOperation("Registra interesse em uma proposta de TCC")
+    // @PutMapping("/tcc/{tccId}/interest")
+    // public ResponseEntity<Void> declareOrientationInterest(@PathVariable Long tccId) {
+    //     professorService.declareOrientationInterest(tccId);
+    //     return new ResponseEntity<>(HttpStatus.CREATED);
+    // }
 
     @ApiOperation("Adiciona um novo TCC ao sistema")
     @PostMapping("/tcc")
