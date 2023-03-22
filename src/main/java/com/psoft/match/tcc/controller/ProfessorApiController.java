@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-// Final change 
 
 @Api(tags = "Professor operations")
 @RestController
@@ -30,12 +29,12 @@ public class ProfessorApiController {
     @Autowired
     private ProfessorService professorService;
 
-    // @ApiOperation("Registra interesse em uma proposta de TCC")
-    // @PutMapping("/tcc/{tccId}/interest")
-    // public ResponseEntity<Void> declareOrientationInterest(@PathVariable Long tccId) {
-    //     professorService.declareOrientationInterest(tccId);
-    //     return new ResponseEntity<>(HttpStatus.CREATED);
-    // }
+    @ApiOperation("Registra interesse em uma proposta de TCC")
+    @PutMapping("/tcc/{tccId}/interest")
+    public ResponseEntity<Void> declareOrientationInterest(@PathVariable Long tccId) {
+        professorService.declareOrientationInterest(tccId);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
 
     @ApiOperation("Adiciona um novo TCC ao sistema")
     @PostMapping("/tcc")
@@ -51,12 +50,12 @@ public class ProfessorApiController {
         return new ResponseEntity<>(String.format(Constants.ORIENTATION_APPROVED_RESPONSE, tccId), HttpStatus.NO_CONTENT);
     }
 
-    // @ApiOperation("Recusa a solicitação de orientação de um aluno em um TCC")
-    // @PutMapping("/tcc/{tccId}/student/{studentId}/interest/refuse")
-    // public ResponseEntity<String> refuseOrientation(@PathVariable Long tccId, @PathVariable Long studentId) {
-    //     professorService.refuseOrientationInterest(tccId, studentId);
-    //     return new ResponseEntity<>(String.format(Constants.ORIENTATION_REFUSED_RESPONSE, tccId), HttpStatus.NO_CONTENT);
-    // }
+    @ApiOperation("Recusa a solicitação de orientação de um aluno em um TCC")
+    @PutMapping("/tcc/{tccId}/student/{studentId}/interest/refuse")
+    public ResponseEntity<String> refuseOrientation(@PathVariable Long tccId, @PathVariable Long studentId) {
+        professorService.refuseOrientationInterest(tccId, studentId);
+        return new ResponseEntity<>(String.format(Constants.ORIENTATION_REFUSED_RESPONSE, tccId), HttpStatus.NO_CONTENT);
+    }
 
     @ApiOperation("Adiciona uma área de estudo nos interesses do professor")
     @PutMapping("/study-area/{studyAreaId}")
