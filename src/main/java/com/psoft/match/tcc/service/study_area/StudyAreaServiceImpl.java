@@ -33,10 +33,10 @@ public class StudyAreaServiceImpl implements StudyAreaService {
         return studyAreaRepository.findAllById(studyAreasIds);
     }
 
-    @Override
-    public void notifyNewTCCToInterestedStudents(StudyArea studyArea, TCC tcc) {
-        studyArea.getInterestedStudents().forEach(student -> emailService.notifyNewTCCToInterestedUsers(student, studyArea, tcc));
-    }
+    // @Override
+    // public void notifyNewTCCToInterestedStudents(StudyArea studyArea, TCC tcc) {
+    //     studyArea.getInterestedStudents().forEach(student -> emailService.notifyNewTCCToInterestedUsers(student, studyArea, tcc));
+    // }
 
     @Override
     public void notifyNewTCCToInterestedStudents(Collection<StudyArea> studyAreas, TCC tcc) {
