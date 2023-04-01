@@ -44,32 +44,32 @@ public class TCCServiceImpl implements TCCService {
         return tccRepository.findAllByTccStatusAndTerm(tccStatus, term);
     }
 
-    @Transactional
-    @Override
-    public TCC saveTCC(TCC tcc) {
-        return tccRepository.save(tcc);
-    }
+    // @Transactional
+    // @Override
+    // public TCC saveTCC(TCC tcc) {
+    //     return tccRepository.save(tcc);
+    // }
 
-    @Transactional
-    @Override
-    public TCC createTCC(TCCDTO tccDTO, Student student) {
-        TCC tcc = new TCC(student, tccDTO.getTitle(), tccDTO.getDescription(), TCCStatus.PENDING_APPROVAL);
-        return this.saveTCC(tcc);
-    }
+    // @Transactional
+    // @Override
+    // public TCC createTCC(TCCDTO tccDTO, Student student) {
+    //     TCC tcc = new TCC(student, tccDTO.getTitle(), tccDTO.getDescription(), TCCStatus.PENDING_APPROVAL);
+    //     return this.saveTCC(tcc);
+    // }
 
-    @Transactional
-    @Override
-    public TCC createTCC(TCCDTO tccDTO, Professor professor) {
-        TCC tcc = new TCC(professor, tccDTO.getTitle(), tccDTO.getDescription(), TCCStatus.APPROVED);
-        return this.saveTCC(tcc);
-    }
+    // @Transactional
+    // @Override
+    // public TCC createTCC(TCCDTO tccDTO, Professor professor) {
+    //     TCC tcc = new TCC(professor, tccDTO.getTitle(), tccDTO.getDescription(), TCCStatus.APPROVED);
+    //     return this.saveTCC(tcc);
+    // }
 
-    @Override
-    public List<TCC> getStudentsTCCs() {
-        return this.getAllTccs()
-                .stream()
-                .filter(TCC::isCreatedByStudent)
-                .collect(Collectors.toList());
-    }
+    // @Override
+    // public List<TCC> getStudentsTCCs() {
+    //     return this.getAllTccs()
+    //             .stream()
+    //             .filter(TCC::isCreatedByStudent)
+    //             .collect(Collectors.toList());
+    // }
 
 }
