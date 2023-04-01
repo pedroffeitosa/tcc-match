@@ -18,11 +18,11 @@ public interface TCCService {
 
     List<TCC> getTCCsByStatusAndTerm(TCCStatus tccStatus, String term);
 
-    TCC saveTCC(TCC tcc);
+    // TCC saveTCC(TCC tcc);
 
-    TCC createTCC(TCCDTO tccDTO, Student student);
+    // TCC createTCC(TCCDTO tccDTO, Student student);
 
-    TCC createTCC(TCCDTO tccDTO, Professor professor);
+    // TCC createTCC(TCCDTO tccDTO, Professor professor);
 
-    List<TCC> getStudentsTCCs();
+    // List<TCC> getStudentsTCCs();
 }
