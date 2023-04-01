@@ -29,17 +29,17 @@ public class ProdDBService implements DBService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @Override
-    public void seed() {
-        Admin admin = new Admin("admin", "admin", "admin", passwordEncoder.encode("admin"));
-        System.out.println(admin.getPassword());
-        Professor professor = new Professor("professor", "professor@gmail.com", "prof", passwordEncoder.encode("123"), Arrays.asList("SPLab"), 10);
-        Student student = new Student("student", "119210036", "ferreiradelimajonatas@gmail.com", "2024.2", "stud", passwordEncoder.encode("123"));
+    // @Override
+    // public void seed() {
+    //     Admin admin = new Admin("admin", "admin", "admin", passwordEncoder.encode("admin"));
+    //     System.out.println(admin.getPassword());
+    //     Professor professor = new Professor("professor", "professor@gmail.com", "prof", passwordEncoder.encode("123"), Arrays.asList("SPLab"), 10);
+    //     Student student = new Student("student", "119210036", "ferreiradelimajonatas@gmail.com", "2024.2", "stud", passwordEncoder.encode("123"));
 
-        List<TCCMatchUser> users = Arrays.asList(admin, professor, student);
+    //     List<TCCMatchUser> users = Arrays.asList(admin, professor, student);
 
-        TCCMatchUserRepository.saveAll(users);
-        professorRepository.save(professor);
-        studentRepository.save(student);
-    }
+    //     TCCMatchUserRepository.saveAll(users);
+    //     professorRepository.save(professor);
+    //     studentRepository.save(student);
+    // }
 }
